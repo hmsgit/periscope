@@ -5,8 +5,8 @@ import {
   TableHeaderCell,
   TableBody,
   TableCell,
-  Text
-} from '@tremor/react';
+  Text,
+} from '@tremor/react'
 
 interface User {
   id: number;
@@ -39,5 +39,5 @@ export default async function UsersTable({ users }: { users: User[] }) {
         ))}
       </TableBody>
     </Table>
-  );
+  )
 }

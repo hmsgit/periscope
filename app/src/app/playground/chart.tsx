@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import { Card, AreaChart, Title, Text } from '@tremor/react';
+import { Card, AreaChart, Title, Text } from '@tremor/react'
 
 const data = [
   {
     Month: 'Jan 21',
     Sales: 2890,
-    Profit: 2400
+    Profit: 2400,
   },
   {
     Month: 'Feb 21',
     Sales: 1890,
-    Profit: 1398
+    Profit: 1398,
   },
   {
     Month: 'Jan 22',
     Sales: 3890,
-    Profit: 2980
-  }
-];
+    Profit: 2980,
+  },
+]
 
 const valueFormatter = (number: number) =>
-  `$ ${Intl.NumberFormat('us').format(number).toString()}`;
+  `$ ${Intl.NumberFormat('us').format(number).toString()}`
 
 export default function Chart() {
   return (
@@ -37,5 +37,5 @@ export default function Chart() {
         valueFormatter={valueFormatter}
       />
     </Card>
-  );
+  )
 }

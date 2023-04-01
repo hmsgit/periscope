@@ -1,16 +1,16 @@
-import { Card, Title, Text } from '@tremor/react';
-import { queryBuilder } from '../lib/planetscale';
-import Search from './search';
-import UsersTable from './table';
+import { Card, Title, Text } from '@tremor/react'
+import { queryBuilder } from '../lib/planetscale'
+import Search from './search'
+import UsersTable from './table'
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'
 
 export default async function IndexPage({
-  searchParams
+  searchParams,
 }: {
   searchParams: { q: string };
 }) {
-  const search = searchParams.q ?? '';
+  const search = searchParams.q ?? ''
   // const users = await queryBuilder
   //   .selectFrom('users')
   //   .select(['id', 'name', 'username', 'email'])
@@ -25,12 +25,12 @@ export default async function IndexPage({
       </Text>
       <Search />
       <Card className="mt-6">
-          <Text>
+        <Text>
             A list of users retrieved from a MySQL database (PlanetScale).
-          </Text>
+        </Text>
         {/* @ts-expect-error Server Component */}
         {/*<UsersTable users={users} />*/}
       </Card>
     </main>
-  );
+  )
 }

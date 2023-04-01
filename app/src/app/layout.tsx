@@ -1,18 +1,18 @@
-import '@public/globals.css';
+import '@public/styles.css'
 
-import Nav from './nav';
-import AnalyticsWrapper from './analytics';
-import Toast from './toast';
-import { Suspense } from 'react';
+import Nav from './nav'
+import AnalyticsWrapper from './analytics'
+import Toast from './toast'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Next.js 13 + PlanetScale + NextAuth + Tailwind CSS',
   description:
-    'A user admin dashboard configured with Next.js, PlanetScale, NextAuth, Tailwind CSS, TypeScript, ESLint, and Prettier.'
-};
+    'A user admin dashboard configured with Next.js, PlanetScale, NextAuth, Tailwind CSS, TypeScript, ESLint, and Prettier.',
+}
 
 export default async function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -28,5 +28,5 @@ export default async function RootLayout({
         <Toast />
       </body>
     </html>
-  );
+  )
 }
