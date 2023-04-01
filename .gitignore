@@ -76,6 +76,13 @@ dist
 # vuepress build output
 .vuepress/dist
 
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
 # Serverless directories
 .serverless/
 
