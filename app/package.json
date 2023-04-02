@@ -1,5 +1,9 @@
 {
-  "private": true,
+  "name": "periscope",
+  "version": "0.1.0",
+  "description": "Altered admin template with more customized structure and linting",
+  "author": "Hossain Mahmud <hossain.mahmud@gmail.com>",
+  "private": false,
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
