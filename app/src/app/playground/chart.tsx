@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, AreaChart, Title, Text } from '@tremor/react'
+import { AreaChart, Card, Text, Title } from '@tremor/react'
 
 const data = [
     {

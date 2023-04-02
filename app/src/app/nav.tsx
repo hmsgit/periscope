@@ -1,5 +1,6 @@
-import Navbar from './navbar'
 import { getServerSession } from 'next-auth/next'
+
+import Navbar from './navbar'
 
 export default async function Nav() {
     const session = await getServerSession()
@@ -8,7 +9,7 @@ export default async function Nav() {
         <Navbar
             user={{
                 email: 'x@y.com',
-                name: 'x y'
+                name: 'x y',
             }}
         />
     )

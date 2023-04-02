@@ -1,5 +1,5 @@
-import { Card, Title, Text } from '@tremor/react'
-import { queryBuilder } from '../lib/planetscale'
+import { Card, Text, Title } from '@tremor/react'
+
 import Search from './search'
 import UsersTable from './table'
 
@@ -12,6 +12,14 @@ export default async function IndexPage({ searchParams }: { searchParams: { q: s
     //   .select(['id', 'name', 'username', 'email'])
     //   .where('name', 'like', `%${search}%`)
     //   .execute();
+    let users = [
+        { id: 'a', name: 'A', username: 'a.A', email: 'a@A.com' },
+        { id: 'b', name: 'A', username: 'a.A', email: 'a@A.com' },
+        { id: 'v', name: 'A', username: 'a.A', email: 'a@A.com' },
+        { id: 'd', name: 'A', username: 'a.A', email: 'a@A.com' },
+        { id: 'e', name: 'A', username: 'a.A', email: 'a@A.com' },
+    ]
+    if (search) users = users.splice(0, 3)
 
     return (
         <main className="p-4 md:p-10 mx-auto max-w-7xl">
