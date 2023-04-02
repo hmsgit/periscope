@@ -1,11 +1,6 @@
 import { Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, Text } from '@tremor/react'
 
-interface User {
-    id: number
-    name: string
-    username: string
-    email: string
-}
+import { User } from '@/types'
 
 export default async function UsersTable({ users }: { users: User[] }) {
     return (

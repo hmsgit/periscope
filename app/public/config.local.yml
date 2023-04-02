@@ -1,0 +1,5 @@
+urls:
+  api: https://localhost:3000/api/v1
+  graph: https://localhost:3100/api/v3
+auth:
+  users: some-fake-key-to-find

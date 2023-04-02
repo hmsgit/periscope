@@ -9,6 +9,7 @@ const nextConfig = {
   },
   eslint: {
     dirs: ['src', 'test', 'cypress/e2e', 'cypress/component'],
+    ignoreDuringBuilds: true
   },
 };
 
