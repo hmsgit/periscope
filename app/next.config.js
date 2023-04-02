@@ -6,7 +6,10 @@ const nextConfig = {
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ['@tremor/react']
-  }
+  },
+  eslint: {
+    dirs: ['src', 'test'],
+  },
 };
 
 module.exports = nextConfig;

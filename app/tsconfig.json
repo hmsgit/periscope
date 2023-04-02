@@ -26,6 +26,17 @@
       "@public/*": ["./public/*"],
     }
   },
+  // To set up the tests using nyc and mocha we need loader and loader needs ts-node and some special behavior
+  "ts-node": {
+    "esm": true, // Not sure if this is needed for anything
+    "transpileOnly": true, // Lets ts-node understand react tags. Resolves errors like Cannot compile <main ...
+    "require": ["tsconfig-paths/register"], // Make ts-node to understand baseUrl/paths
+    "compilerOptions": {
+      "jsx": "react", // Let's ts-node understand react syntax. Resolves errors like: Unknown syntax <>
+      "module": "commonjs" // Tell ts-node understand ts* files. Resolves Unknown file extension ".ts" error
+      // "target": "esnext", // Works without
+    },
+  },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

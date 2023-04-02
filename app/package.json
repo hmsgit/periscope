@@ -5,12 +5,16 @@
   "author": "Hossain Mahmud <hossain.mahmud@gmail.com>",
   "private": false,
   "license": "MIT",
+  "_type": "Don't set the type to module. Messes up the ts-node imports",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "test": "LOG_LEVEL=error nyc mocha --exit --require ts-node/register --require intelli-espower-loader --recursive --watch-extensions ts,tsx 'test/**/*.{ts,tsx}' test",
+    "test:unit": "LOG_LEVEL=error nyc mocha --exit --require ts-node/register --require intelli-espower-loader --recursive --watch-extensions ts,tsx 'test/unit/**/*.{ts,tsx}' test/unit",
+    "test:integration": "LOG_LEVEL=error nyc mocha --exit --require ts-node/register --require intelli-espower-loader --recursive --watch-extensions ts,tsx 'test/integration/**/*.{ts,tsx}' test/integration"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.12",
@@ -19,6 +23,7 @@
     "@tremor/react": "^2.0.1",
     "@vercel/analytics": "^0.1.10",
     "autoprefixer": "^10.4.13",
+    "http": "^0.0.1-security",
     "js-cookie": "^3.0.1",
     "kysely": "^0.23.4",
     "kysely-planetscale": "^1.3.0",
@@ -33,27 +38,74 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/chai-as-promised": "^7.1.5",
     "@types/js-cookie": "^3.0.3",
+    "@types/mocha": "^10.0.1",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/sinon": "^10.0.13",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.7"
+    "intelli-espower-loader": "^1.1.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.8.7",
+    "react-router-dom": "^6.10.0",
+    "sinon": "^15.0.3",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
   },
-  "prettier": {
-    "semi": false,
-    "tabWidth": 4,
-    "printWidth": 120,
-    "endOfLine": "lf",
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "arrowParens": "always",
-    "noMultipleEmptyLines": true
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "exclude": [],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "watermarks": {
+      "lines": [
+        30,
+        75
+      ],
+      "functions": [
+        30,
+        75
+      ],
+      "branches": [
+        30,
+        75
+      ],
+      "statements": [
+        30,
+        75
+      ]
+    },
+    "all": true,
+    "reporter": [
+      "text",
+      "text-summary",
+      "lcov"
+    ],
+    "report-dir": "./coverage"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
   }
 }

@@ -1,4 +1,5 @@
 import { Card, Text, Title } from '@tremor/react'
+import * as React from 'react'
 
 import Search from './search'
 import UsersTable from './table'

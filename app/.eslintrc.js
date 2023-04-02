@@ -2,9 +2,11 @@ module.exports = {
     plugins: [
         '@typescript-eslint', 'prettier', 'import'
     ],
+    parser: '@typescript-eslint/parser',  // Specifies the ESLint parser
     extends: [
-        'next/core-web-vitals',
         "eslint:recommended",
+        'next/core-web-vitals',
+        'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
     ],
     rules: {
@@ -21,7 +23,7 @@ module.exports = {
         // 'arrow-parens': ['error', 'always'], // arrow functions should always have () = > {} styles
         // 'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
         // -- ends here
-        "no-unused-vars": "warn",
+        // "no-unused-vars": "warn",  // Not needed, comes from @typescript-eslint/recommended
         'sort-imports': [ // config for base sort-imports ESLint plugin
             'error',
             {
@@ -62,5 +64,14 @@ module.exports = {
             },
         },
     },
-
+    overrides: [
+        {
+            files: ['testx/**/*.ts'],
+            rules: {
+                camelcase: 'off',
+                '@typescript-eslint/naming-convention': [ 'error', { 'selector': 'variable', 'format': null } ],
+                '@typescript-eslint/no-explicit-any': 0
+            }
+        }
+    ]
 };

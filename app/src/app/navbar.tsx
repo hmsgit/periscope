@@ -9,7 +9,7 @@ import { Fragment } from 'react'
 
 const navigation = [
     { name: 'Dashboard', href: '/' },
-    { name: 'Playground', href: '/playground' }
+    { name: 'Playground', href: '/playground' },
 ]
 
 function classNames(...classes: string[]) {
