@@ -28,5 +28,6 @@ This is a starter template using the following stack:
 - Analytics - [Vercel Analytics](https://vercel.com/analytics)
 - Linting - [ESLint](https://eslint.org)
 - Formatting - [Prettier](https://prettier.io)
+- Testing - **nyc** + **mocha** for unit testing. **cypress** for e2e and component testing
 
 This template uses the new `app` directory in Next.js 13 (beta). This includes support for enhanced layouts, colocation of components, tests, and styles, component-level data fetching, and more.

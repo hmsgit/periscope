@@ -1,0 +1,16 @@
+{
+  "transpileOnly": true, // Lets ts-node understand react tags. Resolves errors like Cannot compile <main ...
+  "require": ["tsconfig-paths/register"], // Make ts-node to understand baseUrl/paths
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress", "node", "react", "react-dom"],
+    "jsx": "react-jsx",
+    "baseUrl": "..",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@src/*": ["./src/*"],
+      "@public/*": ["./public/*"],
+    }
+  }
+}

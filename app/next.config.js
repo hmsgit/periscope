@@ -8,7 +8,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ['@tremor/react']
   },
   eslint: {
-    dirs: ['src', 'test'],
+    dirs: ['src', 'test', 'cypress/e2e', 'cypress/component'],
   },
 };
 

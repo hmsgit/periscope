@@ -40,8 +40,6 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-dist
-out
 
 # TypeScript cache
 *.tsbuildinfo
@@ -93,6 +91,10 @@ next-env.d.ts
 # DynamoDB Local files
 .dynamodb/
 
+# cypress
+screenshots
+videos
+
 # IDEs
 .vscode
 .idea
@@ -103,6 +105,9 @@ next-env.d.ts
 .DS_STORE
 
 app/build
+dist
+out
+
 
 raw.log
 .mypy_cache/
